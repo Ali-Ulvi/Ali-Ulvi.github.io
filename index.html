@@ -1,1 +1,39 @@
 "Hello World" 
+asd
+<div class="code">
+<span class="Namespace">package</span>&nbsp;com.AUTech.testSynch;<br />
+<br />
+<span class="Namespace">import</span>&nbsp;org.junit.Test;<br />
+<span class="Namespace">import</span>&nbsp;org.openqa.selenium.By;<br />
+<span class="Namespace">import</span>&nbsp;org.openqa.selenium.WebDriver;<br />
+<span class="Namespace">import</span>&nbsp;org.openqa.selenium.WebElement;<br />
+<span class="Namespace">import</span>&nbsp;org.openqa.selenium.firefox.FirefoxDriver;<br />
+<span class="Namespace">import</span>&nbsp;org.openqa.selenium.support.ui.ExpectedCondition;<br />
+<span class="Namespace">import</span>&nbsp;org.openqa.selenium.support.ui.ExpectedConditions;<br />
+<span class="Namespace">import</span>&nbsp;org.openqa.selenium.support.ui.WebDriverWait;<br />
+<br />
+<span class="BlockComment">/**<br />
+&nbsp;*&nbsp;Created&nbsp;by&nbsp;Ali&nbsp;Ulvi&nbsp;Talipoglu&nbsp;on&nbsp;18.11.2016.<br />
+&nbsp;*/</span><br />
+<br />
+<span class="Modifier">public</span>&nbsp;<span class="Type">class</span>&nbsp;PageLoadWaitExample&nbsp;{<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">static</span>&nbsp;WebDriver&nbsp;driver;<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;@Test<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="Modifier">public</span>&nbsp;<span class="Type">void</span>&nbsp;testPageLoadSynchronization()&nbsp;throws&nbsp;Exception&nbsp;{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.setProperty(<span class="String">"webdriver.gecko.driver"</span>,&nbsp;<span class="String">"C:\\geckodriver-v0.11.1-win64\\geckodriver.exe"</span>);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;driver&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;FirefoxDriver();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;driver.navigate().to(<span class="String">"https://en.wikipedia.org/wiki/Main_Page"</span>);<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By&nbsp;theLinkToNewPage&nbsp;=&nbsp;By.linkText(<span class="String">"Log&nbsp;in"</span>);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//Element&nbsp;of&nbsp;the&nbsp;link</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WebElement&nbsp;theLinkToNewPageElement&nbsp;=&nbsp;driver.findElement(theLinkToNewPage);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="InlineComment">//Click&nbsp;the&nbsp;link</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theLinkToNewPageElement.click();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WebDriverWait&nbsp;wait&nbsp;=&nbsp;<span class="Keyword">new</span>&nbsp;WebDriverWait(driver,&nbsp;60,&nbsp;100);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wait.until(ExpectedConditions.stalenessOf(theLinkToNewPageElement));<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wait.until(ExpectedConditions.presenceOfElementLocated(theLinkToNewPage));<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+}
+</div>

@@ -1,7 +1,7 @@
 {
   "settings": {
     "currentPage": "page1.html",
-    "name": "My Site",
+    "name": "Testing",
     "theme": {
       "name": "mobirise3",
       "title": "Mobirise 3",
@@ -21,10 +21,14 @@
       }
     },
     "versionFirst": "3.9.2",
-    "uniqCompNum": 18,
+    "uniqCompNum": 19,
     "versionPublish": "3.9.2",
     "publishType": "github",
-    "publishPath": "file:///C:/webpage"
+    "publishPath": "file:///C:/webpage",
+    "path": "@PROJECT_PATH@",
+    "favicon": "",
+    "noImageResize": "",
+    "google-analytics": "<script>\r\n  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\r\n  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\r\n  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\r\n  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');\r\n\r\n  ga('create', 'UA-87676579-1', 'auto');\r\n  ga('send', 'pageview');\r\n\r\n</script>"
   },
   "pages": {
     "index.html": {
@@ -158,7 +162,7 @@
             "showText": true,
             "showButton": false
           },
-          "title": "Article 1<br><a href=\"page1.html\">SELENIUM WEBDRIVER 3 PAGE LOAD SYNCHRONIZATION</a>",
+          "title": "Article 1 :<br><a href=\"page1.html\">SELENIUM WEBDRIVER 3 PAGE LOAD SYNCHRONIZATION</a>",
           "text": "<p>BY ALI ULVI TALIPOGLU\u001b</p>",
           "button": "<a data-app-btn=\"true\" class=\"btn btn-secondary\" href=\"https://mobirise.com\">SEE ALL TEMPLATES</a>"
         }
@@ -382,6 +386,31 @@
             "bgColor": "#fff"
           },
           "text": "<blockquote>You can also use this logic with pages that refresh themselves when an item from a drop-down list is selected.</blockquote>"
+        },
+        {
+          "alias": "facebook-comments",
+          "_tags": [
+            "Extension"
+          ],
+          "_name": "facebook-comments-block",
+          "_anchor": "facebook-comments-block-i",
+          "_params": {
+            "postsNumber": 5,
+            "bgImage": "@ADDONS_PATH@/facebook-comments/facebook-comments-block/assets/comments_bg.jpg",
+            "bgImageRadio": false,
+            "bgColor": "#fff",
+            "bgColorRadio": true,
+            "overlay": false,
+            "overlayOpacity": 0.6,
+            "overlayColor": "#7e9b9f",
+            "socialFacebook": true,
+            "socialGoogle": false,
+            "shortName": "",
+            "socialDisqus": false
+          },
+          "innerText": "<div class=\"facebookPlaceholder\" data-numposts=\"\"><h2>FACEBOOK COMMENTS WILL BE SHOWN ONLY WHEN YOUR SITE IS ONLINE</h2> <img src=\"@PROJECT_PATH@/assets/images/facebook-comments.jpg\"></div>",
+          "innerTextGoogle": "<div class=\"googlePlaceholder\" data-numposts=\"\"><h2>GOOGLE COMMENTS WILL BE SHOWN ONLY WHEN YOUR SITE IS ONLINE</h2> <img src=\"@ADDONS_PATH@/facebook-comments/facebook-comments-block/assets/google-comments.jpg\"></div>",
+          "innerTextDisqus": "<div class=\"disqusPlaceholder\" data-numposts=\"\"><h2>DISQUS COMMENTS WILL BE SHOWN ONLY WHEN YOUR SITE IS ONLINE</h2> <img src=\"@ADDONS_PATH@/facebook-comments/facebook-comments-block/assets/disqus-comments.jpg\"></div>"
         }
       ]
     },

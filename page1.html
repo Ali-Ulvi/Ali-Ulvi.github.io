@@ -115,7 +115,19 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 lead"><blockquote>So we handled this situation by first waiting for an arbitrary element on the page to pass to “stale” state (element is gone from browser (DOM)) meaning old page has gone disappeared, and then waiting for an arbitrary element on the page to be present again, meaning the new page has been loaded again.</blockquote><pre>wait.until(ExpectedConditions.<strong>stalenessOf</strong>(guncelleElement));        wait.until(ExpectedConditions.<strong>presenceOfElementLocated</strong>(By.cssSelector("input[value='Paketleri Guncelle']")));</pre><blockquote>Below I give an example using this logic on wikipedia.org because our intranet page is not public. However, in below example Selenium would already automatically wait for the next page to load, but for sake of demonstration of a fully working code I chose wikipedia.</blockquote>          
-<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+</div>
+        </div>
+    </div>
+
+
+</section>
+<section class="mbr-section article mbr-section__container" id="content2-h" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 lead">
+
+  <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
  2
  3
  4
@@ -193,9 +205,10 @@
         </div>
     </div>
 
-
 </section>
 
+
+  
 <section class="mbr-section article mbr-section__container" id="content2-h" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
 
     <div class="container">

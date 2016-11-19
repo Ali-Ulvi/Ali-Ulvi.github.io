@@ -571,6 +571,9 @@ h6,
   font-family: 'Indie Flower', cursive;
   color: #efefef;
 }
+#content2-6 PRE {
+  color: #373a3c;
+}
 #menu-d .hide-buttons .nav-btn {
   display: none !important;
 }

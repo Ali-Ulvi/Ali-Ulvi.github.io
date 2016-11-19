@@ -1,6 +1,6 @@
 {
   "settings": {
-    "currentPage": "index.html",
+    "currentPage": "page1.html",
     "name": "Testing",
     "theme": {
       "name": "mobirise3",
@@ -238,7 +238,7 @@
               },
               "phone": {
                 "title": "Phone",
-                "visible": true,
+                "visible": false,
                 "customTitle": "Phone"
               },
               "message": {
@@ -247,7 +247,7 @@
               }
             }
           },
-          "buttons": "<a data-app-btn=\"true\" type=\"submit\" class=\"btn btn-primary\">CONTACT US</a>",
+          "buttons": "<a data-app-btn=\"true\" type=\"submit\" class=\"btn btn-primary\" data-toolbar=\"-mbrLink,-mbrBtnAdd,-mbrBtnMove\">CONTACT US</a>",
           "_styles": {
             ".form-control-label": {
               "color": "#232323"
@@ -437,14 +437,14 @@
           "_anchor": "image2-5",
           "_params": {
             "paddingTop": "1",
-            "paddingBottom": "0",
-            "bgColor": "#fff",
+            "paddingBottom": "1",
+            "bgColor": "#ffffff",
             "showText": true
           },
           "media": {
             "image": {
               "active": true,
-              "src": "@PROJECT_PATH@/assets/images/changeden-nce-hlr-dolu-1400x785-0.png",
+              "src": "@PROJECT_PATH@/assets/images/ekran-1400x564-52.png",
               "width": 1400,
               "link": "",
               "alt": "Our Web Service Based Page",
@@ -468,7 +468,12 @@
             "paddingBottom": 1,
             "bgColor": "#fff"
           },
-          "text": "<blockquote>So we handled this situation by first waiting for an arbitrary element on the page to pass to “stale” state (element is gone from browser (DOM)) meaning old page has gone disappeared, and then waiting for an arbitrary element on the page to be present again, meaning the new page has been loaded again.</blockquote><pre>wait.until(ExpectedConditions.<b>stalenessOf</b>(guncelleElement));        wait.until(ExpectedConditions.<b>presenceOfElementLocated</b>(By.cssSelector(\"input[value='Paketleri Guncelle']\")));</pre><blockquote>Below I give an example using this logic on wikipedia.org because our intranet page is not public. However, in below example Selenium would already automatically wait for the next page to load, but for sake of demonstration of a fully working code I chose wikipedia.</blockquote>"
+          "text": "<blockquote>So we handled this situation by first waiting for an arbitrary element on the page to pass to “stale” state (element is gone from browser (DOM)) meaning old page has gone disappeared, and then waiting for an arbitrary element on the page to be present again, meaning the new page has been loaded again.</blockquote><pre>wait.until(ExpectedConditions.<b>stalenessOf</b>(guncelleElement));        wait.until(ExpectedConditions.<b>presenceOfElementLocated</b>(By.cssSelector(\"input[value='Paketleri Guncelle']\")));</pre><blockquote>Below I give an example using this logic on wikipedia.org because our intranet page is not public. However, in below example Selenium would already automatically wait for the next page to load, but for sake of demonstration of a fully working code I chose wikipedia.</blockquote>",
+          "_styles": {
+            "PRE": {
+              "color": "#373a3c"
+            }
+          }
         },
         {
           "_tags": [

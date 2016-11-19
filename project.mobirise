@@ -1,6 +1,6 @@
 {
   "settings": {
-    "currentPage": "page1.html",
+    "currentPage": "index.html",
     "name": "Testing",
     "theme": {
       "name": "mobirise3",
@@ -21,7 +21,7 @@
       }
     },
     "versionFirst": "3.9.2",
-    "uniqCompNum": 19,
+    "uniqCompNum": 22,
     "versionPublish": "3.9.2",
     "publishType": "github",
     "publishPath": "file:///C:/webpage",
@@ -165,6 +165,94 @@
           "title": "Article 1 :<br><a href=\"page1.html\">SELENIUM WEBDRIVER 3 PAGE LOAD SYNCHRONIZATION</a>",
           "text": "<p>BY ALI ULVI TALIPOGLU\u001b</p>",
           "button": "<a data-app-btn=\"true\" class=\"btn btn-secondary\" href=\"https://mobirise.com\">SEE ALL TEMPLATES</a>"
+        },
+        {
+          "_inherit": "social-buttons1",
+          "_styles": {
+            ".mbr-section-title, .btn-social": {
+              "color": "#fff"
+            }
+          },
+          "_tags": [
+            "Theme"
+          ],
+          "_name": "social-buttons3",
+          "_anchor": "social-buttons3-j",
+          "_params": {
+            "paddingTop": 3,
+            "paddingBottom": 3,
+            "bgImageRadio": false,
+            "parallax": true,
+            "bgImage": "@THEME_PATH@/components/_images/jumbotron.jpg",
+            "bgColor": "#2e2e2e",
+            "bgColorRadio": true,
+            "overlay": false,
+            "overlayOpacity": 0.5,
+            "overlayColor": "#222",
+            "facebook": true,
+            "twitter": true,
+            "google": true,
+            "vkontakte": false,
+            "odnoklassniki": false
+          },
+          "text": "SHARE THIS PAGE!"
+        },
+        {
+          "_tags": [
+            "Theme"
+          ],
+          "_name": "form1",
+          "_anchor": "form1-l",
+          "_params": {
+            "labelsColor": "#232323",
+            "paddingTop": 3,
+            "paddingBottom": 3,
+            "bgImageRadio": false,
+            "parallax": true,
+            "bgImage": "@THEME_PATH@/components/_images/jumbotron.jpg",
+            "bgColor": "#fff",
+            "bgColorRadio": true,
+            "overlay": false,
+            "overlayOpacity": 0.5,
+            "overlayColor": "#222",
+            "showTitle": true,
+            "showSubTitle": true
+          },
+          "title": "CONTACT FORM",
+          "subtitle": "Contact us or ask to be an author",
+          "form": {
+            "action": "ulvital@gmail.com",
+            "alerts": {
+              "success": "Thanks for filling out form!"
+            },
+            "fields": {
+              "name": {
+                "title": "Name",
+                "visible": true,
+                "customTitle": "Name*"
+              },
+              "email": {
+                "title": "Email",
+                "visible": true,
+                "customTitle": "Email*"
+              },
+              "phone": {
+                "title": "Phone",
+                "visible": true,
+                "customTitle": "Phone"
+              },
+              "message": {
+                "title": "Message",
+                "customTitle": "Message"
+              }
+            }
+          },
+          "buttons": "<a data-app-btn=\"true\" type=\"submit\" class=\"btn btn-primary\">CONTACT US</a>",
+          "_styles": {
+            ".form-control-label": {
+              "color": "#232323"
+            }
+          }
         }
       ]
     },
@@ -338,12 +426,20 @@
             "Theme"
           ],
           "_name": "image2",
+          "_styles": {
+            "DIV": {
+              "font-size": "16px",
+              "font-family": "'Indie Flower', cursive",
+              "googleLink": "https://fonts.googleapis.com/css?family=Indie+Flower",
+              "color": "#efefef"
+            }
+          },
           "_anchor": "image2-5",
           "_params": {
-            "paddingTop": "0",
+            "paddingTop": "1",
             "paddingBottom": "0",
             "bgColor": "#fff",
-            "showText": false
+            "showText": true
           },
           "media": {
             "image": {
@@ -359,7 +455,7 @@
               "src": "https://www.youtube.com/embed/Tq7p44IA-1U"
             }
           },
-          "text": "Create awesome mobile-friendly websites. No coding and free."
+          "text": "A webpage that uses web services in the background"
         },
         {
           "_tags": [
@@ -372,7 +468,7 @@
             "paddingBottom": 1,
             "bgColor": "#fff"
           },
-          "text": "<blockquote>So we handled this situation by first waiting for an arbitrary element on the page to pass to “stale” state(element is gone from browser (DOM)) meaning old page has gone disappeared, and then waiting for an arbitrary element on the page to be present again, meaning the new page has been loaded again.</blockquote><pre>wait.until(ExpectedConditions.<b>stalenessOf</b>(guncelleElement));        wait.until(ExpectedConditions.<b>presenceOfElementLocated</b>(By.cssSelector(\"input[value='Paketleri Guncelle']\")));</pre><blockquote>Below I give an example using this logic on wikipedia.org because our intranet page is not public. However, in below example Selenium would already automatically wait for the next page to load, but for sake of demonstration of a fully working code I chose wikipedia.</blockquote>"
+          "text": "<blockquote>So we handled this situation by first waiting for an arbitrary element on the page to pass to “stale” state (element is gone from browser (DOM)) meaning old page has gone disappeared, and then waiting for an arbitrary element on the page to be present again, meaning the new page has been loaded again.</blockquote><pre>wait.until(ExpectedConditions.<b>stalenessOf</b>(guncelleElement));        wait.until(ExpectedConditions.<b>presenceOfElementLocated</b>(By.cssSelector(\"input[value='Paketleri Guncelle']\")));</pre><blockquote>Below I give an example using this logic on wikipedia.org because our intranet page is not public. However, in below example Selenium would already automatically wait for the next page to load, but for sake of demonstration of a fully working code I chose wikipedia.</blockquote>"
         },
         {
           "_tags": [

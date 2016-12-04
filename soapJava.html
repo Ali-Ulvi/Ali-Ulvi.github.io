@@ -94,84 +94,6 @@
 
 </section>
 
-<section class="mbr-section article mbr-section__container" id="content2-h" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
-
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 lead">
-			
-<div style='background:#FFFFFF; font-family: Courier New, Courier; font-size: 10pt; COLOR: #000000; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;'><strong><font color='#7f0055'>import</font></strong>&nbsp;org.apache.http.HttpEntity;
-<br/><strong><font color='#7f0055'>import</font></strong>&nbsp;org.apache.http.HttpResponse;
-<br/><strong><font color='#7f0055'>import</font></strong>&nbsp;org.apache.http.client.HttpClient;
-<br/><strong><font color='#7f0055'>import</font></strong>&nbsp;org.apache.http.client.methods.HttpPost;
-<br/><strong><font color='#7f0055'>import</font></strong>&nbsp;org.apache.http.entity.StringEntity;
-<br/><strong><font color='#7f0055'>import</font></strong>&nbsp;org.apache.http.impl.client.DefaultHttpClient;
-<br/><strong><font color='#7f0055'>import</font></strong>&nbsp;org.apache.http.util.EntityUtils;
-<br/>
-<br/>
-<br/><strong><font color='#7f0055'>public</font></strong>&nbsp;<strong><font color='#7f0055'>class</font></strong>&nbsp;SoapWebServiceClient&nbsp;{
-<br/>
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;<font color='#3f7f5f'>//This&nbsp;method&nbsp;sends&nbsp;a&nbsp;SOAP&nbsp;request&nbsp;and&nbsp;prints&nbsp;response,&nbsp;and&nbsp;parses&nbsp;and&nbsp;prints&nbsp;texts&nbsp;of&nbsp;all&nbsp;<balance>&nbsp;elements&nbsp;in&nbsp;the&nbsp;response&nbsp;
-</font><br/>&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>public</font></strong>&nbsp;<strong><font color='#7f0055'>void</font></strong>&nbsp;postSOAPXML(String&nbsp;exampleInputParameter)&nbsp;{
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;resp&nbsp;=&nbsp;<strong><font color='#7f0055'>null</font></strong>;
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>try</font></strong>&nbsp;{
-<br/>
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;soapBody&nbsp;=&nbsp;<font color='#2a00ff'>"<soapenv:Envelope&nbsp;xmlns:soapenv=\"</font>http:<font color='#3f7f5f'>//schemas.xmlsoap.org/soap/envelope/\"&nbsp;xmlns:aut=\"http://ulvi.aut.com/aut\">\n"&nbsp;+
-</font><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#2a00ff'>"&nbsp;&nbsp;&nbsp;<soapenv:Header/>\n"</font>&nbsp;+
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#2a00ff'>"&nbsp;&nbsp;&nbsp;<soapenv:Body>\n"</font>&nbsp;+
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#2a00ff'>"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<aut:GetDataRequest>\n"</font>&nbsp;+
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#2a00ff'>"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<MiddlewareTransactionId>123456AUT</MiddlewareTransactionId>\n"</font>&nbsp;+
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#2a00ff'>"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<keyValue>"</font>&nbsp;+&nbsp;exampleInputParameter&nbsp;+&nbsp;<font color='#2a00ff'>"</keyValue>\n"</font>&nbsp;+
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#2a00ff'>"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<returnRealtimeData>true</returnRealtimeData>\n"</font>&nbsp;+
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#2a00ff'>"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</aut:GetDataRequest>\n"</font>&nbsp;+
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#2a00ff'>"&nbsp;&nbsp;&nbsp;</soapenv:Body>\n"</font>&nbsp;+
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#2a00ff'>"</soapenv:Envelope>"</font>;
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HttpClient&nbsp;httpclient&nbsp;=&nbsp;<strong><font color='#7f0055'>new</font></strong>&nbsp;DefaultHttpClient();
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#3f7f5f'>//&nbsp;You&nbsp;can&nbsp;get&nbsp;below&nbsp;parameters&nbsp;from&nbsp;SoapUI's&nbsp;Raw&nbsp;request&nbsp;if&nbsp;you&nbsp;are&nbsp;using&nbsp;that&nbsp;tool
-</font><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StringEntity&nbsp;strEntity&nbsp;=&nbsp;<strong><font color='#7f0055'>new</font></strong>&nbsp;StringEntity(soapBody,&nbsp;<font color='#2a00ff'>"text/xml"</font>,&nbsp;<font color='#2a00ff'>"UTF-8"</font>);
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#3f7f5f'>//&nbsp;URL&nbsp;of&nbsp;request
-</font><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HttpPost&nbsp;post&nbsp;=&nbsp;<strong><font color='#7f0055'>new</font></strong>&nbsp;HttpPost(<font color='#2a00ff'>"http:<font color='#3f7f5f'>//10.1.1.3:8989/getData");
-</font><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;post.setHeader(<font color='#2a00ff'>"SOAPAction"</font>,&nbsp;<font color='#2a00ff'>"GetData"</font>);
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;post.setEntity(strEntity);
-<br/>
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#3f7f5f'>//&nbsp;Execute&nbsp;request
-</font><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HttpResponse&nbsp;response&nbsp;=&nbsp;httpclient.execute(post);
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HttpEntity&nbsp;respEntity&nbsp;=&nbsp;response.getEntity();
-<br/>
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>if</font></strong>&nbsp;(respEntity&nbsp;!=&nbsp;<strong><font color='#7f0055'>null</font></strong>)&nbsp;{
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resp&nbsp;=&nbsp;EntityUtils.toString(respEntity);
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#3f7f5f'>//prints&nbsp;whole&nbsp;response
-</font><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(resp);
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#3f7f5f'>//Regular&nbsp;expression&nbsp;to&nbsp;parse&nbsp;texts&nbsp;of&nbsp;<balance>&nbsp;elements&nbsp;in&nbsp;the&nbsp;response&nbsp;assuming&nbsp;they&nbsp;have&nbsp;no&nbsp;child&nbsp;elements
-</font><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Matcher&nbsp;m&nbsp;=&nbsp;Pattern.compile(<font color='#2a00ff'>"<balance>([^<]*)"</font>).matcher(resp);&nbsp;<font color='#3f7f5f'>//groups&nbsp;all&nbsp;characters&nbsp;except&nbsp;<&nbsp;(tag&nbsp;closing&nbsp;character)
-</font><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>while</font></strong>&nbsp;(m.find())&nbsp;{
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#3f7f5f'>//prints&nbsp;texts&nbsp;of&nbsp;all&nbsp;balances&nbsp;in&nbsp;a&nbsp;loop
-</font><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(m.group(1));
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<strong><font color='#7f0055'>else</font></strong>&nbsp;{
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.err.println(<font color='#2a00ff'>"No&nbsp;Response"</font>);
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-<br/>
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<strong><font color='#7f0055'>catch</font></strong>&nbsp;(Exception&nbsp;e)&nbsp;{
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.err.println(<font color='#2a00ff'>"WebService&nbsp;SOAP&nbsp;exception&nbsp;=&nbsp;"</font>&nbsp;+&nbsp;e.toString());
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;}
-<br/>
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color='#7f0055'>public</font></strong>&nbsp;<strong><font color='#7f0055'>static</font></strong>&nbsp;<strong><font color='#7f0055'>void</font></strong>&nbsp;main(String[]&nbsp;args)&nbsp;{
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SoapWebServiceClient&nbsp;soapWebServiceClientObject&nbsp;=&nbsp;<strong><font color='#7f0055'>new</font></strong>&nbsp;SoapWebServiceClient();
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;soapWebServiceClientObject.postSOAPXML(<font color='#2a00ff'>"057177711"</font>);
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;}
-<br/>}<div style='text-align:right;BORDER-TOP: #ccc 1px dashed'><a href="http://www.togotutor.com/code-to-html/java-to-html.php" target="_blank">Code Formatted by ToGoTutor</a></div></div>
-
- 
-			</div>
-        </div>
-    </div>
-
-</section>
 
 
 <section class="mbr-section mbr-section__comments" id="facebook-comments-block-i" style="background-color: rgb(255, 255, 255);">
@@ -185,7 +107,6 @@
         </div>
     </div>
 </section>
-
 <footer class="mbr-small-footer mbr-section mbr-section-nopadding mbr-parallax-background" id="footer1-2" style="background-image: url(assets/images/jumbotron.jpg); padding-top: 1.75rem; padding-bottom: 1.75rem;">
     <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(68, 68, 68);"></div>
     <div class="container">
@@ -193,8 +114,6 @@
  
     </div>
 </footer>
-
-
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>

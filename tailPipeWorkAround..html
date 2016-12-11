@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Site made with Mobirise Website Builder v3.9.2, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v3.9.2, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+  <meta name="description" content="USING MULTIPLE grep AFTER tail -f in UNIX">
+  <title>UNIX: USING MULTIPLE grep AFTER tail -f</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+  <link rel="stylesheet" href="assets/bootstrap-material-design-font/css/material.css">
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  
+  
+  
+</head>
+<body>
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87676579-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- /Google Analytics -->
+
+
+<section id="menu-t">
+
+    <nav class="navbar navbar-dropdown bg-color transparent navbar-fixed-top">
+        <div class="container">
+
+            <div class="mbr-table">
+                
+                <div class="mbr-table-cell">
+
+                    <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                        <div class="hamburger-icon"></div>
+                    </button>
+
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="index.html"><span class="mbri-alert mbr-iconfont mbr-iconfont-btn" style="font-size: 2px;"></span>HOME</a></li><li class="nav-item nav-btn"><a class="nav-link btn btn-white btn-white-outline" href="abAUT.html">About Author</a></li></ul>
+                    <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                        <div class="close-icon"></div>
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+</section>
+
+<section class="engine"><a rel="external" href="https://mobirise.com">easy web site creator software download</a></section><section class="mbr-section article mbr-after-navbar" id="msg-box8-v" data-bg-video="https://www.youtube.com/watch?v=uNCr7NdOJgw" style="padding-top: 120px; padding-bottom: 120px;">
+
+    <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(34, 34, 34);">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-xs-center">
+                <h3 class="mbr-section-title display-2">USING MULTIPLE grep AFTER tail -f in UNIX</h3>
+                <div class="lead"><p>BY ALI ULVI TALIPOGLU</p></div>
+                
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="mbr-section article mbr-section__container" id="content2-w" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 lead"><blockquote><p>We use <span style="font-style: normal;"><strong>tail -f</strong></span> when following log files continuously. But after&nbsp;<span style="font-style: normal;"><strong>tail -f</strong></span> we can <strong>not</strong> use multiple pipes like <span style="font-style: normal;"><strong>tail -f | grep word1 | grep -v word2</strong></span> due to unix kernel's 'feature'. So instead you can use "<span style="font-style: normal;">regular-expression lookahead</span>" for example when you want to see only the lines that contain words <strong>error</strong> or <strong>:E: </strong>but not contain words <strong>connect</strong> and&nbsp;<strong>CDR </strong>as below:</p></blockquote></div>
+        </div>
+    </div>
+
+</section>
+
+<section class="mbr-section article mbr-section__container" id="content1-1a" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 lead"><pre>tail -f log_file.txt | grep -P '^(.(?!connect|CDR))*(error|:E:)(.(?!connect|CDR))*'$</pre></div>
+        </div>
+    </div>
+
+</section>
+
+<section class="mbr-section article mbr-section__container" id="content2-12" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 lead"><blockquote>Explanation of the regex:</blockquote><blockquote>The regular expression above is trying to match line begining(^) followed by any number(*) of any characters(.) not followed by(?!) <strong>connect</strong> nor <strong>CDR</strong> then followed by <strong>error</strong> or(|) <strong>:E:</strong>&nbsp;then again followed by any number of any characters not followed by <strong>connect</strong> nor <strong>CDR</strong> and then line ending($).</blockquote><blockquote>Your version of <span style="font-style: normal;">grep</span> should support <span style="font-style: normal;"><strong>P</strong>erl Regex</span> for this feature.</blockquote><blockquote><p>You can also make it case-insensitive by adding <span style="font-style: normal;">-i:</span> &nbsp;</p><p><span style="font-style: normal; font-size: 1.09rem; line-height: 1.5;">grep -<strong>i</strong>P</span></p></blockquote></div>
+        </div>
+    </div>
+
+</section>
+
+<section class="mbr-section article mbr-section__container" id="content2-13" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 lead"><blockquote><strong>Other useful hints:</strong></blockquote><blockquote><ul><li>To grep lines that contain both<strong> foo</strong> and <strong>bar</strong> you can use:</li></ul></blockquote></div>
+        </div>
+    </div>
+
+</section>
+
+<section class="mbr-section article mbr-section__container" id="content2-14" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 lead"><pre>tail -f log_file.txt | grep 'foo.*bar|bar.*foo'</pre></div>
+        </div>
+    </div>
+
+</section>
+
+<section class="mbr-section article mbr-section__container" id="content2-15" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 lead"><blockquote><p>meaning <span style="font-style: normal;"><strong>foo</strong></span> comes after <span style="font-style: normal;"><strong>bar</strong></span> or vice versa.</p></blockquote></div>
+        </div>
+    </div>
+
+</section>
+
+<section class="mbr-section article mbr-section__container" id="content2-17" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 lead"><blockquote><ul><li>Use <strong>grep -f FILE</strong> and it will obtain patterns from that <span style="font-style: normal;"><strong>FILE</strong>.</span></li></ul></blockquote></div>
+        </div>
+    </div>
+
+</section>
+
+<section class="mbr-section article mbr-section__container" id="content2-18" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 lead"><blockquote><ul><li><span style="font-size: 1.09rem; line-height: 1.5;">Lastly, some <span style="font-style: normal;"><strong>grep</strong></span> versions support <span style="font-style: normal;"><strong>--exclude-from=FILE</strong></span> option that lets you add exclusion patterns from a <span style="font-style: normal;"><strong>FILE</strong></span>:</span></li></ul></blockquote></div>
+        </div>
+    </div>
+
+</section>
+
+<section class="mbr-section article mbr-section__container" id="content2-19" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 lead"><pre>tail -f &lt;file&gt; | grep --exclude-from=excludes.txt</pre></div>
+        </div>
+    </div>
+
+</section>
+
+<footer class="mbr-small-footer mbr-section mbr-section-nopadding mbr-parallax-background" id="footer1-u" style="background-image: url(assets/images/jumbotron.jpg); padding-top: 1.75rem; padding-bottom: 1.75rem;">
+    <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(68, 68, 68);"></div>
+    <div class="container">
+        <p class="text-xs-center"></p>
+    </div>
+</footer>
+
+
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/smooth-scroll/SmoothScroll.js"></script>
+  <script src="assets/viewportChecker/jquery.viewportchecker.js"></script>
+  <script src="assets/dropdown/js/script.min.js"></script>
+  <script src="assets/touchSwipe/jquery.touchSwipe.min.js"></script>
+  <script src="assets/jarallax/jarallax.js"></script>
+  <script src="assets/jquery-mb-ytplayer/jquery.mb.YTPlayer.min.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  
+  
+  <input name="animation" type="hidden">
+   <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon"></i></a></div>
+  </body>
+</html>

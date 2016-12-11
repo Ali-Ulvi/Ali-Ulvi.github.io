@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
- 
-<title>SELENIUM WEBDRIVER 3 PAGE LOAD SYNCHRONIZATION</title>
- 
   <!-- Site made with Mobirise Website Builder v3.9.2, https://mobirise.com -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -70,7 +67,7 @@
 
 </section>
 
-<section class="engine"><a rel="external" href="https://mobirise.com">free web site maker software download</a></section><section class="mbr-section article mbr-parallax-background mbr-after-navbar" id="msg-box8-3" style="background-image: url(assets/images/desert.jpg); padding-top: 120px; padding-bottom: 120px;">
+<section class="engine"><a rel="external" href="https://mobirise.com">simple mobile web site development</a></section><section class="mbr-section article mbr-parallax-background mbr-after-navbar" id="msg-box8-3" style="background-image: url(assets/images/desert.jpg); padding-top: 120px; padding-bottom: 120px;">
 
     <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(34, 34, 34);">
     </div>
@@ -117,107 +114,17 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 lead"><blockquote>So we handled this situation by first waiting for an arbitrary element on the page to pass to “stale” state (element is gone from browser (DOM)) meaning old page has gone disappeared, and then waiting for an arbitrary element on the page to be present again, meaning the new page has been loaded again.</blockquote><pre>wait.until(ExpectedConditions.<strong>stalenessOf</strong>(guncelleElement));        wait.until(ExpectedConditions.<strong>presenceOfElementLocated</strong>(By.cssSelector("input[value='Paketleri Guncelle']")));</pre><blockquote>Below I give an example using this logic on wikipedia.org because our intranet page is not public. However, in below example Selenium would already automatically wait for the next page to load, but for sake of demonstration of a fully working code I chose wikipedia.</blockquote>          
-</div>
-        </div>
-    </div>
-
-
-</section>
-<section class="mbr-section article mbr-section__container" id="content2-h" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
-
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 lead">
-
-  <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">package</span> com<span style="color: #333333">.</span><span style="color: #0000CC">AUTech</span><span style="color: #333333">.</span><span style="color: #0000CC">testSynch</span><span style="color: #333333">;</span>
-
-<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">org.junit.Test</span><span style="color: #333333">;</span>
-<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">org.openqa.selenium.By</span><span style="color: #333333">;</span>
-<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">org.openqa.selenium.WebDriver</span><span style="color: #333333">;</span>
-<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">org.openqa.selenium.WebElement</span><span style="color: #333333">;</span>
-<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">org.openqa.selenium.firefox.FirefoxDriver</span><span style="color: #333333">;</span>
-<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">org.openqa.selenium.support.ui.ExpectedConditions</span><span style="color: #333333">;</span>
-<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">org.openqa.selenium.support.ui.WebDriverWait</span><span style="color: #333333">;</span>
-
-<span style="color: #888888">/**</span>
-<span style="color: #888888"> * Created by Ali Ulvi Talipoglu on 18.11.2016.</span>
-<span style="color: #888888"> */</span>
-
-<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">PageLoadWaitExample</span> <span style="color: #333333">{</span>
-
-    <span style="color: #008800; font-weight: bold">static</span> WebDriver driver<span style="color: #333333">;</span>
-
-    <span style="color: #555555; font-weight: bold">@Test</span>
-    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">testPageLoadSynchronization</span><span style="color: #333333">()</span> <span style="color: #008800; font-weight: bold">throws</span> Exception <span style="color: #333333">{</span>
-        System<span style="color: #333333">.</span><span style="color: #0000CC">setProperty</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;webdriver.gecko.driver&quot;</span><span style="color: #333333">,</span> <span style="background-color: #fff0f0">&quot;C:\\geckodriver-v0.11.1-win64\\geckodriver.exe&quot;</span><span style="color: #333333">);</span>
-        driver <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> FirefoxDriver<span style="color: #333333">();</span>
-        driver<span style="color: #333333">.</span><span style="color: #0000CC">navigate</span><span style="color: #333333">().</span><span style="color: #0000CC">to</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;https://en.wikipedia.org/wiki/Main_Page&quot;</span><span style="color: #333333">);</span>
-
-        By theLinkToNewPage <span style="color: #333333">=</span> By<span style="color: #333333">.</span><span style="color: #0000CC">linkText</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Log in&quot;</span><span style="color: #333333">);</span>
-        <span style="color: #888888">//Element of the link</span>
-        WebElement theLinkToNewPageElement <span style="color: #333333">=</span> driver<span style="color: #333333">.</span><span style="color: #0000CC">findElement</span><span style="color: #333333">(</span>theLinkToNewPage<span style="color: #333333">);</span>
-        <span style="color: #888888">//Click the link</span>
-        theLinkToNewPageElement<span style="color: #333333">.</span><span style="color: #0000CC">click</span><span style="color: #333333">();</span>
-        WebDriverWait wait <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> WebDriverWait<span style="color: #333333">(</span>driver<span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">60</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">100</span><span style="color: #333333">);</span>
-        <span style="color: #888888">//wait till the old page disappears</span>
-        wait<span style="color: #333333">.</span><span style="color: #0000CC">until</span><span style="color: #333333">(</span>ExpectedConditions<span style="color: #333333">.</span><span style="color: #0000CC">stalenessOf</span><span style="color: #333333">(</span>theLinkToNewPageElement<span style="color: #333333">));</span>
-        <span style="color: #888888">//wait till the new page loads</span>
-        wait<span style="color: #333333">.</span><span style="color: #0000CC">until</span><span style="color: #333333">(</span>ExpectedConditions<span style="color: #333333">.</span><span style="color: #0000CC">presenceOfElementLocated</span><span style="color: #333333">(</span>theLinkToNewPage<span style="color: #333333">));</span>
-        <span style="color: #888888">//Page is loaded</span>
-    <span style="color: #333333">}</span>
-<span style="color: #333333">}</span>
-</pre></td></tr></table></div>
-</div>
+            <div class="col-xs-12 lead"><blockquote>So we handled this situation by first waiting for an arbitrary element on the page to pass to “stale” state (element is gone from browser (DOM)) meaning old page has gone disappeared, and then waiting for an arbitrary element on the page to be present again, meaning the new page has been loaded again.</blockquote><pre>wait.until(ExpectedConditions.<strong>stalenessOf</strong>(guncelleElement));        wait.until(ExpectedConditions.<strong>presenceOfElementLocated</strong>(By.cssSelector("input[value='Paketleri Guncelle']")));</pre><blockquote>Below I give an example using this logic on wikipedia.org because our intranet page is not public. However, in below example Selenium would already automatically wait for the next page to load, but for sake of demonstration of a fully working code I chose wikipedia.</blockquote></div>
         </div>
     </div>
 
 </section>
 
-
-  
 <section class="mbr-section article mbr-section__container" id="content2-h" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
 
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 lead"><blockquote>You can also use this logic with pages that refresh themselves when an item from a drop-down list is selected.<br><br>Source: <a href="https://ali-ulvi.github.io/page1.html">Ali Ulvi Talipoglu</a></blockquote></div>
-
+            <div class="col-xs-12 lead"><blockquote>You can also use this logic with pages that refresh themselves when an item from a drop-down list is selected.</blockquote></div>
         </div>
     </div>
 
@@ -229,8 +136,6 @@
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2"><div class="facebookPlaceholder" data-numposts="5"><h2>FACEBOOK COMMENTS WILL BE SHOWN ONLY WHEN YOUR SITE IS ONLINE</h2> <img src="assets/images/facebook-comments.jpg"></div></div>
             
-<br>       
-  <a href="http://www.reliablecounter.com" target="_blank"><img src="http://www.reliablecounter.com/count.php?page=https://ali-ulvi.github.io/page1.html&digit=style/plain/25/&reloads=1" alt="www.reliablecounter.com" title="www.reliablecounter.com" border="0"></a><br /><a href="http://www.analogmix.com/mastering.html" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;">mastering a track</a>
            
         </div>
     </div>
@@ -240,7 +145,6 @@
     <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(68, 68, 68);"></div>
     <div class="container">
         <p class="text-xs-center"></p>
- 
     </div>
 </footer>
 
@@ -257,7 +161,9 @@
   <script src="assets/touchSwipe/jquery.touchSwipe.min.js"></script>
   <script src="assets/jarallax/jarallax.js"></script>
   <script src="assets/theme/js/script.js"></script>
+  
+  
   <input name="animation" type="hidden">
    <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon"></i></a></div>
-  </body> 
+  </body>
 </html>

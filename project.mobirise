@@ -1,6 +1,6 @@
 {
   "settings": {
-    "currentPage": "index.html",
+    "currentPage": "abAUT.html",
     "name": "Testing",
     "theme": {
       "name": "mobirise3",
@@ -333,8 +333,8 @@
     },
     "page1.html": {
       "settings": {
-        "title": "",
-        "meta_descr": "",
+        "title": "SELENIUM WEBDRIVER 3  PAGE LOAD SYNCHRONIZATION",
+        "meta_descr": "SELENIUM WEBDRIVER 3 \nPAGE LOAD SYNCHRONIZATION",
         "header_custom": "",
         "footer_custom": "",
         "html_before": ""
@@ -592,8 +592,8 @@
     },
     "abAUT.html": {
       "settings": {
-        "title": "",
-        "meta_descr": "",
+        "title": "About Author - Ali Ulvi Talipoglu",
+        "meta_descr": "Ali Ulvi Talipoğlu",
         "header_custom": "",
         "footer_custom": "",
         "html_before": ""

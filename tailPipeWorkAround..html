@@ -137,7 +137,26 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 lead"><blockquote><p>meaning <span style="font-style: normal;"><strong>foo</strong></span> comes after <span style="font-style: normal;"><strong>bar</strong></span> or vice versa.</p></blockquote></div>
+            <div class="col-xs-12 lead"><blockquote><p>meaning <span style="font-style: normal;"><strong>foo</strong></span> comes after <span style="font-style: normal;"><strong>bar</strong></span> or vice versa. Other solutions:</p></blockquote></div>
+        </div>
+    </div>
+
+</section>
+<section class="mbr-section article mbr-section__container" id="content2-14" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 lead"><pre>tail -f log_file.txt | grep --line-buffered foo | grep --line-buffered bar'</pre></div>
+        </div>
+    </div>
+
+</section>
+
+<section class="mbr-section article mbr-section__container" id="content2-14" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 lead"><pre>tail -f log_file.txt | stdbuf -o0 grep foo | stdbuf -o0 grep bar'</pre></div>
         </div>
     </div>
 

@@ -258,7 +258,7 @@
             "paddingBottom": 3,
             "parallax": true,
             "bgImageRadio": true,
-            "bgImage": "@PROJECT_PATH@/assets/images/1147641-matrix-background-2000x1125-99.png",
+            "bgImage": "@PROJECT_PATH@/assets/images/1147641-matrix-background-2000x1125-26.jpg",
             "bgColor": "#F2F2F2",
             "bgColorRadio": false,
             "bgVideo": {

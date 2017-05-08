@@ -679,7 +679,7 @@
               "color": "@primaryColor"
             },
             ".link[aria-expanded=\"true\"], .dropdown-item[aria-expanded=\"true\"]": {
-              "color": "#c0a375!important"
+              "color": "#ffffff!important"
             },
             "&.mbr-navbar--stuck .mbr-navbar__section": {
               "background": "#2c2c2c"
@@ -758,7 +758,7 @@
             "showButton": false
           },
           "title": "ABOUT&nbsp;AUTHOR",
-          "text": "<p>About Ali Ulvi Talipoglu</p><p>Ali Ulvi Talipoglu is a senior software test engineer with a 7+ years of experience. He worked at Huawei Turkey and Huawei China as a software test engineer and &nbsp;test coordinator. Now, he is working as a software testing c\u001b\u001bonsultant at Turk Telekom.</p><p><a href=\"https://www.linkedin.com/in/aliulvi\" target=\"_blank\"><b style=\"font-style: normal;\">See On LinkedIn</b></a></p><br><p><br></p>",
+          "text": "<p>About Ali Ulvi Talipoglu</p><p>Ali Ulvi Talipoglu is a senior software test engineer with a 7+ years of experience. He worked at Huawei Turkey and Huawei China as a software test engineer and &nbsp;test coordinator. Now, he is working as a software testing c\u001bonsultant at Turk Telekom.</p><p><a href=\"https://www.linkedin.com/in/aliulvi\" target=\"_blank\"><b style=\"font-style: normal;\">See On LinkedIn</b></a></p><br><p><br></p>",
           "button": "<a data-app-btn=\"true\" class=\"btn btn-secondary\" href=\"https://mobirise.com\">SEE ALL TEMPLATES</a>"
         }
       ]

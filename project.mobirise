@@ -1,6 +1,6 @@
 {
   "settings": {
-    "currentPage": "digital_marketing_automatic_commenter.html",
+    "currentPage": "index.html",
     "name": "Testing",
     "theme": {
       "name": "mobirise3",
@@ -272,7 +272,7 @@
             "showText": true,
             "showButton": false
           },
-          "title": "<a href=\"digital_marketing_auto_commenter.html\" class=\"text-primary\">INSTAGRAM AUTO COMMENTER</a>",
+          "title": "<a href=\"digital_marketing_automatic_commenter.html\" class=\"text-primary\">INSTAGRAM AUTO COMMENTER</a>",
           "text": "<p>BY ALI ULVI TALIPOGLU</p>",
           "button": "<a data-app-btn=\"true\" class=\"btn btn-secondary\" href=\"https://mobirise.com\">SEE ALL TEMPLATES</a>"
         },

@@ -1,6 +1,6 @@
 {
   "settings": {
-    "currentPage": "digital_marketing_automatic_commenter.html",
+    "currentPage": "abAUT.html",
     "name": "Testing",
     "theme": {
       "name": "mobirise3",
@@ -16,7 +16,7 @@
         "subtitleFont": "Lora",
         "textFont": "Raleway",
         "isRoundedButtons": false,
-        "isAnimatedOnScroll": true,
+        "isAnimatedOnScroll": false,
         "isScrollToTopButton": true
       }
     },
@@ -758,7 +758,7 @@
             "showButton": false
           },
           "title": "ABOUT&nbsp;AUTHOR",
-          "text": "<p>About Ali Ulvi Talipoglu</p><p>Ali Ulvi Talipoglu is a senior software test engineer with a 7+ years of experience. He worked at Huawei Turkey and Huawei China as a software test engineer and &nbsp;test coordinator. Now, he is working as a software testing c\u001bonsultant at Turk Telekom.</p><p><a href=\"https://www.linkedin.com/in/aliulvi\" target=\"_blank\"><b style=\"font-style: normal;\">See On LinkedIn</b></a></p><br><p><br></p>",
+          "text": "<p>About Ali Ulvi Talipoglu</p><p>Ali Ulvi Talipoglu is a senior software test engineer with a 7+ years of experience. He worked at Huawei Turkey and Huawei China as a software test engineer and &nbsp;test coordinator. Now, he is working as a software testing consultant at Turk Telekom.</p><p><a href=\"https://www.linkedin.com/in/aliulvi\" target=\"_blank\"><b style=\"font-style: normal;\">See On LinkedIn</b></a></p><br><p><br></p>",
           "button": "<a data-app-btn=\"true\" class=\"btn btn-secondary\" href=\"https://mobirise.com\">SEE ALL TEMPLATES</a>"
         }
       ]
@@ -1290,7 +1290,7 @@
             "paddingBottom": 3,
             "parallax": true,
             "bgImageRadio": true,
-            "bgImage": "@PROJECT_PATH@/assets/images/1147641-matrix-background-2000x1125-50.jpg",
+            "bgImage": "@PROJECT_PATH@/assets/images/1147641-matrix-backgroun-2000x1125-2.jpg",
             "bgColor": "#F2F2F2",
             "bgColorRadio": false,
             "bgVideo": {
@@ -1319,7 +1319,7 @@
             "paddingBottom": 1,
             "bgColor": "#3ebc62"
           },
-          "text": "<blockquote><blockquote>This tool automatically comments to given instagram accounts. It is great to spread your word such easily! Perfect for next era of digital marketing.</blockquote><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Just<b> <b><a href=\"https://github.com/Ali-Ulvi/instaComment/raw/master/instaComment_jar.rar\">download</a><a href=\"https://github.com/Ali-Ulvi/instaComment/raw/master/instaComment_jar.rar\"> </a><a href=\"https://github.com/Ali-Ulvi/instaComment/raw/master/instaComment_jar.rar\">here.</a></b></b><a href=\"https://github.com/Ali-Ulvi/instaComment/raw/master/instaComment_jar.rar\"> </a>Extract to a folder and double click on \"<span style=\"font-style: normal;\">Start instaComment.jar</span><b>\"</b></p><p>&nbsp; &nbsp; &nbsp;&nbsp;You need to have new versions of <a href=\"https://www.google.com/chrome/browser/desktop/index.html\" target=\"_blank\">Chrome web browser</a> and <a href=\"https://www.java.com/tr/download\" target=\"_blank\">Java</a>.</p><p><br></p></blockquote>"
+          "text": "<blockquote><blockquote>This tool automatically comments to given instagram accounts. It is great to spread your word such easily! Perfect for next era of digital marketing.</blockquote><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Just<b> <b><a href=\"https://github.com/Ali-Ulvi/instaComment/raw/master/instaComment_jar.rar\">download</a><a href=\"https://github.com/Ali-Ulvi/instaComment/raw/master/instaComment_jar.rar\"> </a><a href=\"https://github.com/Ali-Ulvi/instaComment/raw/master/instaComment_jar.rar\">here.</a></b></b><a href=\"https://github.com/Ali-Ulvi/instaComment/raw/master/instaComment_jar.rar\"> </a>Extract to a folder and double click on \"<span style=\"font-style: normal;\">Start instaComment.jar</span><b>\"</b></p><p>&nbsp; &nbsp; &nbsp;&nbsp;You need to have new versions of <a href=\"https://www.google.com/chrome/browser/desktop/index.html\" target=\"_blank\">Chrome web browser</a> and <a href=\"https://www.java.com/tr/download\" target=\"_blank\">Java.</a></p><p><br></p></blockquote>"
         },
         {
           "_tags": [

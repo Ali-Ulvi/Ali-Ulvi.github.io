@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>WEB Second Consent Page</title> 
+     <script type="text/javascript">
+	 	var key 		= 'MWsA7skOxdahybxc';
+	 	var encParam 	= 'RrA6';
+	 	var cgTrxnId 	= '201119183148022004';
+		var queryString 	= 'MSISDN=959268708220&productID=5060&pName=ComBox&pPrice=1&pVal=1&CpId=TIMWE&CpPwd=timwe@123&CpName=TIMWE&reqMode=WAP&reqType=SUBSCRIPTION&ismID=17&sRenewalPrice=1&sRenewalValidity=1&serviceType=T_TIMWE_COM_SUB_D&planId=T_TIMWE_COM_SUB_D_99&request_locale=en&transID=Fload7fd7uds436g&dRcp=201119183148022005';	 	
+	 	var mdnReceivedBeforeConvert= '959268708060';
+	
+	 </script>
+	
+	<!--  JavaScript file -->
+	<script type="text/javascript" src="javaScript/jquery-1.7.1.min.js"></script>
+    <script  src="javaScript/pbkdf2.js"></script>
+	<script type="text/javascript" src="javaScript/aes.js"></script>
+	<script type="text/javascript" src="javaScript/AesUtil.js"></script>
+	<script type="text/javascript" src="javaScript/murmurhash3.js"></script>
+	<script type="text/javascript" src="javaScript/java_hashcode.js"></script>
+	<script type="text/javascript" src="javaScript/fingerprint.js"></script>
+    <script type="text/javascript">
+ // Create the event.
+	window.eventTrigger = document.createEvent('Event');
+
+	// Define that the event name is 'build'.
+	window.eventTrigger.initEvent('trigger', true, true);
+    	
+    	document.addEventListener('trigger', function (e) { 
+    		/* ... */ 
+	   		var iv 			= CryptoJS.lib.WordArray.random(128/8).toString(CryptoJS.enc.Hex);
+	   		var salt 		= CryptoJS.lib.WordArray.random(128/8).toString(CryptoJS.enc.Hex);
+	   		var aesUtil 	= new AesUtil(128, 500);
+	   		var uiTimestamp = new Date().getTime();
+	   		var dt = new Date();
+	   		var tz = dt.getTimezoneOffset();
+	   		var fg = new Fingerprint({canvas: true}).get();
+	   		var request = window.logRequest + '&c_fr='+fg + '&cgTransactionId=' + cgTrxnId + '&uiTimestamp='+uiTimestamp + '&t_z='+tz;
+		   	console.log(request);
+	   		var ciphertext = aesUtil.encrypt(salt, iv, key, request);
+	   		
+	   		var f = document.createElement("form");
+	   		f.setAttribute('method',"post");
+	   		f.setAttribute('action',"CGReq5?"+queryString); 		
+	   		f.setAttribute('id',"sendForm");
+	   		
+	   		document.getElementsByTagName('body')[0].appendChild(f);
+	   		
+	   		$('#sendForm').submit(function(){ 
+     	   		 $('<input />').attr('type', 'hidden').attr('name', "cgTransactionId").attr('value', cgTrxnId).appendTo('#sendForm');
+	     		 $('<input />').attr('type', 'hidden').attr('name', "vldiv").attr('value', iv).appendTo('#sendForm');
+			     $('<input />').attr('type', 'hidden').attr('name', "vldslt").attr('value', salt).appendTo('#sendForm');
+			     $('<input />').attr('type', 'hidden').attr('name', encParam).attr('value', ciphertext).appendTo('#sendForm');
+			     $('<input />').attr('type', 'hidden').attr('name', "m").attr('value', mdnReceivedBeforeConvert).appendTo('#sendForm');
+			  return true;
+				}); 
+	   		
+	   		$('#sendForm').submit();
+    	}, false);
+    </script>
+    <script type="text/javascript">
+    var _spk = window._spk || [];
+    (function() {
+	// var u="http://172.30.24.230:9173/Sputnik";
+      //var u="http://localhost:8080/WapClient";
+     // _spk.push(['setTrackerUrl', u+'/']);
+     // _spk.push(['setTrackerUrl', u+'/analytics']);
+      var _c = new Date().getTime();
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src='javaScript/analytics.js?c='+ _c; s.parentNode.insertBefore(g,s);
+    })();
+    _spk.push(['trackPageView', 'home', {h_t: 'page'}]);
+  </script>
+  </head>
+  <body>
+
+  </body>
+</html>
